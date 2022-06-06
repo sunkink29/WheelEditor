@@ -1,7 +1,76 @@
 <!DOCTYPE html>
 
-<head></head>
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/winwheel@1.0.1/dist/Winwheel.min.js"></script>
+  <script src="./index.js"></script>
+</head>
 
 <body>
-  <h1>Wheel Editor</h1>
+  <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <span class="mdc-top-app-bar__title">Wheel Editor</span>
+      </section>
+    </div>
+  </header>
+  <main class="mdc-top-app-bar--fixed-adjust">
+    <div class="flex justify-center mt-4">
+      <canvas id="canvas" width="500" height="500"></canvas>
+      <div>
+        <label class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating">
+          <span class="mdc-text-field__ripple"></span>
+          <span class="mdc-floating-label mdc-floating-label--float-above" id="label">Label</span>
+          <input class="mdc-text-field__input" type="text" aria-labelledby="label">
+          <span class="mdc-line-ripple"></span>
+        </label> <br>
+        <label class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating mt-3">
+          <span class="mdc-text-field__ripple"></span>
+          <span class="mdc-floating-label mdc-floating-label--float-above" id="weight">Weight</span>
+          <input class="mdc-text-field__input" type="text" aria-labelledby="weight">
+          <span class="mdc-line-ripple"></span>
+        </label> <br>
+        <label class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating mt-3">
+          <span class="mdc-text-field__ripple"></span>
+          <span class="mdc-floating-label mdc-floating-label--float-above" id="multiplier">Multiplier</span>
+          <input class="mdc-text-field__input" type="text" aria-labelledby="multiplier">
+          <span class="mdc-line-ripple"></span>
+        </label> <br>
+        <label class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating mt-3">
+          <span class="mdc-text-field__ripple"></span>
+          <span class="mdc-floating-label mdc-floating-label--float-above" id="dest">Destination (optional)</span>
+          <input class="mdc-text-field__input" type="text" aria-labelledby="dest">
+          <span class="mdc-line-ripple"></span>
+        </label> <br>
+        <label class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating mt-3">
+          <span class="mdc-text-field__ripple"></span>
+          <span class="mdc-floating-label mdc-floating-label--float-above" id="msg">Message (optional)</span>
+          <input class="mdc-text-field__input" type="text" aria-labelledby="msg">
+          <span class="mdc-line-ripple"></span>
+        </label> <br>
+        <div class="mt-3">
+          <label>Color: </label>
+          <input id="color" type="color">
+        </div>
+        <div class="flex mt-3">
+          <button class="mdc-button mdc-button--raised mr-3" id="new">
+            <span class="mdc-button__label">New</span>
+          </button>
+          <button class="mdc-button mdc-button--raised" id="delete">
+            <span class="mdc-button__label">Delete</span>
+          </button>
+        </div>
+        <label class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating mt-3">
+          <span class="mdc-text-field__ripple"></span>
+          <span class="mdc-floating-label mdc-floating-label--float-above" id="config">Segment Config</span>
+          <input class="mdc-text-field__input" type="text" aria-labelledby="config">
+          <span class="mdc-line-ripple"></span>
+        </label> <br>
+      </div>
+    </div>
+  </main>
 </body>
